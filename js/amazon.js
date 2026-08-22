@@ -32,8 +32,8 @@
 //   priceCents: 1899
 // }
 // ];
-import { cart, addToCart } from "../data/cart.js";
-import { products } from "../data/products.js";
+import { cart, addToCart } from "../data-1/cart.js";
+import { products } from "../data-1/products.js";
 import { formatCurrency } from "./utility/money.js";
 
 let productsHTMl = '';
