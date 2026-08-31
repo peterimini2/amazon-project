@@ -1,46 +1,16 @@
-// const products = [{
-//   image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
-//   name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
-//   rating: {
-//     stars: 4.5,
-//     count: 87
-//   },
-//   priceCents: 1090
-// }, {
-//   image: 'images/products/intermediate-composite-basketball.jpg',
-//   name: 'Intermediate Size Basketballs',
-//   rating: {
-//     stars: 4,
-//     count: 127
-//   },
-//   priceCents: 2095
-//   }, {
-//   image: 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
-//   name: 'Adults Plain Cotton T-Shirt - 2 Pack',
-//   rating: {
-//     stars: 4.5,
-//     count: 56
-//   },
-//   priceCents: 799
-//   }, {
-//   image: 'images/products/black-2-slot-toaster.jpg',
-//   name: '2 Slot Toaster - Black',
-//   rating: {
-//     stars: 5,
-//     count: 2197
-//   },
-//   priceCents: 1899
-// }
-// ];
 import { cart, addToCart } from "../data-1/cart.js";
-import { products } from "../data-1/products.js";
+import { products, loadProducts } from "../data-1/products.js";
 import { formatCurrency } from "./utility/money.js";
 
-let productsHTMl = '';
+loadProducts(renderProductsGrid);
 
-products.forEach((product) => {
-  productsHTMl += `
-  <div class="product-container">
+
+function renderProductsGrid() {
+   let productsHTMl = '';
+
+    products.forEach((product) => {
+    productsHTMl += `
+    <div class="product-container">
         <div class="product-image-container">
           <img class="product-image"
             src="${product.image}">
@@ -91,9 +61,9 @@ products.forEach((product) => {
           Add to Cart
         </button>
       </div>`
-})
-
-document.querySelector('.js-products-grid').innerHTML = productsHTMl;
+    });
+  document.querySelector('.js-products-grid').innerHTML = productsHTMl;
+}
 
 function updateCartQuantity() {
   let cartQuantity = 0;
