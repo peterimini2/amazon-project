@@ -14,18 +14,10 @@ export function renderOrderSummary() {
     const productId = cartItem.productId;
 
     const matchingProduct = getProduct(productId);
-
-    console.log('productId:', productId);
-    console.log('matchingProduct:', matchingProduct);
     
     const deliveryOptionId = cartItem.deliveryOptionId
-
-    console.log('deliveryOptionId:', deliveryOptionId);
    
     const deliveryOption = getDeliveryOption(deliveryOptionId)
-
-    console.log('deliveryOption:', deliveryOption);
-
 
     const today = dayjs();
     const deliveryDate = today.add(
